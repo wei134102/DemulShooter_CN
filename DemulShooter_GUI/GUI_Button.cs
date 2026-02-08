@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DemulShooter_GUI
@@ -20,6 +20,14 @@ namespace DemulShooter_GUI
                 Pnl_Background.BackColor = Color.Green;
             else
                 Pnl_Background.BackColor = Color.Crimson;
+        }
+
+        /// <summary>
+        /// Apply localized strings (Plan B). Button number is not localized.
+        /// </summary>
+        public void ApplyLocalization()
+        {
+            Lbl_Number.Text = _Number.ToString();
         }
     }    
 }

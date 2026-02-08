@@ -134,3 +134,58 @@ Designer 中对应代码形如：`this.label15.Text = resources.GetString("label
   - 若**需要持续跟进上游仓库更新**：推荐 **方案 B**（集中 Strings + 运行时绑定），与上游的 Designer 改动解耦，合并冲突少、维护成本低。  
   - 若**不常合并上游、以本分支独立开发为主**：可采用方案 A（WinForms 标准本地化），与设计器集成更好。  
 - 无论哪种方案，都建议：启动时按配置设置 `CurrentUICulture`，代码中 MessageBox/标题等统一从资源键取值，并在设置中提供语言选项与持久化。
+
+---
+
+## 七、方案 B 已实施说明
+
+本项目已按 **方案 B** 实现多语言支持：
+
+- **资源文件**：`DemulShooter_GUI\Properties\Strings.resx`（默认英文）、`Strings.zh-CN.resx`（简体中文），通过 `Strings.Designer.cs` 的 `Strings.Get(key)` 与 `Strings.Culture` 使用。
+- **语言切换**：在程序目录的 **config.ini** 中增加一行（无则使用系统/默认语言）：
+  - `gui_language=zh-CN` → 简体中文
+  - `gui_language=en` 或留空 → 英文
+- **启动逻辑**：`Program.Main` 在创建主窗体之前读取 `gui_language`，设置 `Thread.CurrentThread.CurrentUICulture` 与 `Strings.Culture`，主窗体和子控件在 Load 时通过 `ApplyLocalization()` 从 `Strings` 拉取文案。
+- **编译**：建议使用 **Visual Studio** 编译 .NET Framework 4.8 项目。若使用 `dotnet build` 出现 MSB3823/MSB3822，可改用 VS 构建，或在 csproj 中启用 `GenerateResourceUsePreserializedResources` 并引用 NuGet 包 `System.Resources.Extensions`。
+
+---
+
+## 八、使用中文：需要替换原版的哪些文件
+
+中文界面**已经内嵌**在本仓库编译出的 `DemulShooter_GUI.exe` 里，不需要单独的语言包。只要用本仓库的编译结果替换原版里对应文件，并设置配置即可。
+
+### 1. 编译本仓库
+
+- 用 **Visual Studio** 打开解决方案，选择 **Release | x86**（或你使用的平台），先编译 **DsCore**，再编译 **DemulShooter_GUI**。
+- 编译完成后，在 **DemulShooter_GUI\bin\Release\** 下会得到（至少）：
+  - **DemulShooter_GUI.exe**
+  - **DsCore.dll**（因 GUI 引用了 DsCore，一般会复制到输出目录）
+  - **zh-CN** 文件夹（内含中文资源 DLL，用于界面显示简体中文）
+
+### 2. 替换原版里的文件
+
+在**原版 DemulShooter** 的安装目录（即你平时运行 DemulShooter_GUI 的文件夹）里：
+
+| 原版里的文件或文件夹 | 用本仓库编译出的内容替换 |
+|---------------------|---------------------------|
+| **DemulShooter_GUI.exe** | 用 `DemulShooter_GUI\bin\Release\DemulShooter_GUI.exe` 覆盖 |
+| **DsCore.dll**（若该目录下存在） | 用 `DemulShooter_GUI\bin\Release\DsCore.dll` 覆盖 |
+| **zh-CN** 文件夹 | 将 `DemulShooter_GUI\bin\Release\zh-CN` **整个文件夹**复制到原版目录下（与 exe 同级）；若原版已有 zh-CN 文件夹则覆盖。 |
+
+**使用中文时必须复制 zh-CN 文件夹**，否则程序会回退到英文界面。其它文件（如 `DemulShooter.exe`、`DemulShooterX64.exe`、`config.ini` 等）**不必**从本仓库替换，保留原版即可。
+
+### 3. 让界面显示中文
+
+在同一目录下找到 **config.ini**（没有就新建一个），确保其中有：
+
+```ini
+gui_language=zh-CN
+```
+
+保存后，**重新运行 DemulShooter_GUI.exe**，界面即为简体中文。
+
+### 4. 小结
+
+- **必须替换/复制**：`DemulShooter_GUI.exe`、同目录下的 `DsCore.dll`（若存在）、以及 **zh-CN 文件夹**（与 exe 同级）。
+- **必须设置**：`config.ini` 里 `gui_language=zh-CN`。
+- **说明**：中文文案在 **zh-CN** 文件夹内的资源 DLL 中，未复制该文件夹时界面会显示英文。

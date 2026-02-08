@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using DsCore.Config;
+using DemulShooter_GUI.Properties;
 
 namespace DemulShooter_GUI
 {
@@ -14,6 +15,22 @@ namespace DemulShooter_GUI
         public GUI_RawInputHID()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Apply localized strings (Plan B).
+        /// </summary>
+        public void ApplyLocalization()
+        {
+            Gbox_HIDOptions.Text = Strings.Get("GunOptions_DeviceOptions");
+            label1.Text = Strings.Get("HID_YAxis");
+            label29.Text = Strings.Get("HID_XAxis");
+            label30.Text = Strings.Get("HID_OffScreenButton");
+            label31.Text = Strings.Get("HID_ActionButton");
+            label32.Text = Strings.Get("HID_TriggerButton");
+            groupBox1.Text = Strings.Get("GunOptions_DevicePreview");
+            Chk_InvertX.Text = Strings.Get("HID_InvertAxis");
+            Chk_InvertY.Text = Strings.Get("HID_InvertAxis");
         }
 
         public void UpdateData(PlayerSettings PlayerData)

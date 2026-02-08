@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using DsCore.Config;
 using DsCore.Win32;
+using DemulShooter_GUI.Properties;
 
 namespace DemulShooter_GUI
 {
@@ -32,8 +33,21 @@ namespace DemulShooter_GUI
                 _KeyboardHookID = Win32API.SetWindowsHookEx(Win32Define.WH_KEYBOARD_LL, _KeyboardHookProc, Win32API.GetModuleHandle(curModule.ModuleName), 0);
             if (_KeyboardHookID == IntPtr.Zero)
             {
-                MessageBox.Show("Failed to register LowLevel Keyboard Hook.", "DemulShooter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_KeyboardHookFailed"), Strings.Get("Title_Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// Apply localized strings (Plan B).
+        /// </summary>
+        public void ApplyLocalization()
+        {
+            Gbox_GunOptions.Text = Strings.Get("GunOptions_DeviceOptions");
+            label2.Text = Strings.Get("GunOptions_LeftMouseKey");
+            label1.Text = Strings.Get("GunOptions_RightMouseKey");
+            Lbl_MidButonEnable.Text = Strings.Get("GunOptions_EnableVirtualMouse");
+            label36.Text = Strings.Get("GunOptions_MiddleMouseKey");
+            groupBox1.Text = Strings.Get("GunOptions_DevicePreview");
         }
 
         public void UpdateData(PlayerSettings PlayerData)

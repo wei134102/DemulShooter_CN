@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -10,6 +10,7 @@ using DsCore.Config;
 using DsCore.RawInput;
 using DsCore.Win32;
 using System.Drawing;
+using DemulShooter_GUI.Properties;
 
 namespace DemulShooter_GUI
 {    
@@ -54,7 +55,7 @@ namespace DemulShooter_GUI
             Logger.IsEnabled = IsVerbose;
 
             _This = this;
-            this.Text = "DemulShooter_GUI " + System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString();
+            this.Load += Wnd_DemulShooterGui_Load;
 
             Logger.WriteLog("");
             Logger.WriteLog("---------------- Program Start -- DemulShooter_GUI v" + System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString() + " ----------------");
@@ -230,7 +231,7 @@ namespace DemulShooter_GUI
             rid[2].hwndTarget = this.Handle;
             if (!Win32API.RegisterRawInputDevices(rid, (uint)rid.Length, (uint)Marshal.SizeOf(rid[0])))
             {
-                MessageBox.Show("Failed to register raw input device(s).", "DemulShooter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_RawInputFailed"), Strings.Get("Title_Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
 
@@ -243,7 +244,176 @@ namespace DemulShooter_GUI
             CrosshairAimTimer = new Timer();
             CrosshairAimTimer.Tick += new EventHandler(CrosshairAimTimer_Tick);  
         }
-               
+
+        private void Wnd_DemulShooterGui_Load(object sender, EventArgs e)
+        {
+            this.Text = Strings.Get("Main_Title") + " " + System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString();
+            ApplyLocalization();
+        }
+
+        /// <summary>
+        /// Apply localized strings to all UI elements (Plan B - central resources).
+        /// </summary>
+        private void ApplyLocalization()
+        {
+            this.Text = Strings.Get("Main_Title") + " " + System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString();
+            Btn_Save_P1.Text = Strings.Get("Btn_SaveConfig");
+            Tab_P1.Text = Strings.Get("Tab_P1Config");
+            Tab_P2.Text = Strings.Get("Tab_P2Config");
+            Btn_SaveP2.Text = Strings.Get("Btn_SaveConfig");
+            Tab_P3.Text = Strings.Get("Tab_P3Config");
+            Btn_Save_P3.Text = Strings.Get("Btn_SaveConfig");
+            Tab_P4.Text = Strings.Get("Tab_P4Config");
+            Btn_Save_P4.Text = Strings.Get("Btn_SaveConfig");
+            Tab_AnalogCalib.Text = Strings.Get("Tab_AnalogCalib");
+            Btn_SaveAnalog.Text = Strings.Get("Btn_SaveConfig");
+            Tab_ActLAbs.Text = Strings.Get("Tab_Calibration");
+            Btn_ActLabs_Save.Text = Strings.Get("Btn_SaveConfig");
+            groupBox3.Text = Strings.Get("Gbox_ActLabsPlaceholder");
+            label47.Text = Strings.Get("Label_P4YOffset");
+            label48.Text = Strings.Get("Label_P4XOffset");
+            label49.Text = Strings.Get("Label_P3YOffset");
+            label50.Text = Strings.Get("Label_P3XOffset");
+            label18.Text = Strings.Get("Label_P2YOffset");
+            label19.Text = Strings.Get("Label_P2XOffset");
+            Chk_DspCorrectedCrosshair.Text = Strings.Get("Chk_DspCorrectedCrosshair");
+            label17.Text = Strings.Get("Label_P1YOffset");
+            label16.Text = Strings.Get("Label_P1XOffset");
+            Cb_ActLabsOffset.Text = Strings.Get("Chk_ActLabsOffset");
+            label15.Text = Strings.Get("Label_ActLabsHelp");
+            Tab_Dolphin.Text = Strings.Get("Tab_Dolphin");
+            label2.Text = Strings.Get("Label_DolphinHelp");
+            Btn_Dolphin5.Text = Strings.Get("Btn_InstallWiimote");
+            Tab_EAInvasion.Text = Strings.Get("Tab_EAInvasion");
+            groupBox17.Text = Strings.Get("Gbox_SetKeyHelp");
+            label76.Text = Strings.Get("Label_Settings");
+            Btn_EAI_Save.Text = Strings.Get("Btn_SaveKeyConfig");
+            label69.Text = Strings.Get("Label_Enter");
+            label70.Text = Strings.Get("Label_Down");
+            label71.Text = Strings.Get("Label_P1Credits");
+            label72.Text = Strings.Get("Label_Up");
+            label73.Text = Strings.Get("Label_P1Start");
+            label74.Text = Strings.Get("Label_P2Start");
+            label75.Text = Strings.Get("Label_P2Credits");
+            groupBox16.Text = Strings.Get("Gbox_EAI_SelectDir");
+            Btn_EAI_Patch.Text = Strings.Get("Btn_Patch");
+            Btn_EAI_Open.Text = Strings.Get("Btn_Browse");
+            Tab_GSOZ.Text = Strings.Get("Tab_GSOZ");
+            Btn_Save_Gsoz.Text = Strings.Get("Btn_SaveConfig");
+            label34.Text = Strings.Get("Label_GSOZ_PedalHelp");
+            groupBox6.Text = Strings.Get("Gbox_Player2");
+            label33.Text = Strings.Get("Label_SetPedalKey");
+            Chk_GundamP2Pedal.Text = Strings.Get("Chk_EnablePedalMode");
+            groupBox5.Text = Strings.Get("Gbox_Player1");
+            label9.Text = Strings.Get("Label_SetPedalKey");
+            Chk_GundamP1Pedal.Text = Strings.Get("Chk_EnablePedalMode");
+            Tab_HeavyFire.Text = Strings.Get("Tab_HeavyFire");
+            Rdo_HF_MiddleGrenade.Text = Strings.Get("Rdo_HF_MiddleGrenade");
+            Rdo_HF_MiddleCover.Text = Strings.Get("Rdo_HF_MiddleCover");
+            label27.Text = Strings.Get("Label_HF_CoverQTE");
+            label40.Text = Strings.Get("Label_HF_GrenadeKey");
+            label45.Text = Strings.Get("Label_HF_CoverSensibility");
+            Chk_HF_ReverseCover.Text = Strings.Get("Chk_HF_ReverseCover");
+            Btn_HF_Save.Text = Strings.Get("Btn_Save");
+            Tab_LethalEnforcer3.Text = Strings.Get("Tab_LethalEnforcer3");
+            Btn_Save_Le3.Text = Strings.Get("Btn_SaveConfig");
+            label58.Text = Strings.Get("Label_LE3_PedalHelp");
+            groupBox14.Text = Strings.Get("Gbox_Player2");
+            label59.Text = Strings.Get("Label_SetPedalKey");
+            Chk_Le3_EnablePedal2.Text = Strings.Get("Chk_EnablePedalMode");
+            groupBox15.Text = Strings.Get("Gbox_Player1");
+            label60.Text = Strings.Get("Label_SetPedalKey");
+            Chk_Le3_EnablePedal1.Text = Strings.Get("Chk_EnablePedalMode");
+            Tab_M2.Text = Strings.Get("Tab_M2");
+            Cbox_M2_Flash.Text = Strings.Get("Cbox_M2_DisableFlash");
+            label14.Text = Strings.Get("Label_CrosshairVisibility");
+            label13.Text = Strings.Get("Label_P2ChangeCrosshair");
+            label11.Text = Strings.Get("Label_P1ChangeCrosshair");
+            Btn_M2Scripts.Text = Strings.Get("Btn_M2Scripts");
+            label1.Text = Strings.Get("Label_M2_ScriptsHelp");
+            Tab_MissionImpossible.Text = Strings.Get("Tab_MissionImpossible");
+            groupBox4.Text = Strings.Get("Gbox_TriggersConfig");
+            label42.Text = Strings.Get("Label_MergeTriggersHelp");
+            Rdo_MIA_Merge.Text = Strings.Get("Rdo_MergeTriggers");
+            Rdo_MIA_Separate.Text = Strings.Get("Rdo_SeparateTriggers");
+            Btn_MisImp_Save.Text = Strings.Get("Btn_SaveConfig");
+            Tab_OpGhost.Text = Strings.Get("Tab_OpGhost");
+            label67.Text = Strings.Get("Label_OpGhost_SeparateActionHelp");
+            groupBox18.Text = Strings.Get("Gbox_CoinSettings");
+            label66.Text = Strings.Get("Label_CreditsToContinue");
+            label65.Text = Strings.Get("Label_CreditsToStart");
+            label64.Text = Strings.Get("Label_CoinsPerCredit");
+            label62.Text = Strings.Get("Label_Freeplay");
+            label61.Text = Strings.Get("Label_SetP2Key");
+            label63.Text = Strings.Get("Label_SetP1Key");
+            Chk_OpGhost_SeparateButton.Text = Strings.Get("Chk_OpGhost_SeparateAction");
+            Btn_Save_OpGhost.Text = Strings.Get("Btn_SaveConfig");
+            Tab_UnityPlugins.Text = Strings.Get("Tab_UnityPlugins");
+            label36.Text = Strings.Get("Label_SelectUnityPlugin");
+            Tab_Raccoon.Text = Strings.Get("Tab_Raccoon");
+            groupBox21.Text = Strings.Get("Gbox_Raccoon_SelectDir");
+            Btn_Raccoon_Patch.Text = Strings.Get("Btn_Patch");
+            Btn_Raccoon_Open.Text = Strings.Get("Btn_Browse");
+            Tab_RPCS3.Text = Strings.Get("Tab_RPCS3");
+            Txt_Rpcs3_Save.Text = Strings.Get("Btn_SaveConfig");
+            groupBox13.Text = Strings.Get("Gbox_PPUCache");
+            Btn_Rpcs3_RazingStorm.Text = Strings.Get("Btn_RazingStorm");
+            Btn_Rpcs3_SailorZombies.Text = Strings.Get("Btn_SailorZombie");
+            Btn_Rpcs3_DarkEscape.Text = Strings.Get("Btn_DarkEscape");
+            Btn_Rpcs3_DeadStorm.Text = Strings.Get("Btn_DeadStorm");
+            groupBox12.Text = Strings.Get("Gbox_RPCS3_KeyConfig");
+            label57.Text = Strings.Get("Label_PlayerButtons");
+            label37.Text = Strings.Get("Label_TestMenuButtons");
+            label56.Text = Strings.Get("Label_Service");
+            label38.Text = Strings.Get("Label_3DSwitch");
+            label55.Text = Strings.Get("Label_P2Start");
+            label54.Text = Strings.Get("Label_P1Start_Short");
+            label51.Text = Strings.Get("Label_Down");
+            label53.Text = Strings.Get("Label_Up");
+            label52.Text = Strings.Get("Label_Enter");
+            Tab_SHA.Text = Strings.Get("Tab_SHA");
+            label35.Text = Strings.Get("Gbox_SetKeyHelp");
+            label8.Text = Strings.Get("Label_Service");
+            Save_Sha_Keys.Text = Strings.Get("Btn_SaveKeyConfig");
+            label7.Text = Strings.Get("Label_Test");
+            label12.Text = Strings.Get("Label_P1Trigger");
+            label6.Text = Strings.Get("Label_Exit");
+            label5.Text = Strings.Get("Label_P1Start");
+            label3.Text = Strings.Get("Label_P2Start");
+            label4.Text = Strings.Get("Label_P2Trigger");
+            Tab_Outputs.Text = Strings.Get("Tab_Outputs");
+            Cbox_NetOutputs.Text = Strings.Get("Cbox_NetOutputs");
+            Cbox_WmOutputs.Text = Strings.Get("Cbox_WmOutputs");
+            Cbox_Outputs.Text = Strings.Get("Cbox_EnableOutputs");
+            Btn_SaveOutput.Text = Strings.Get("Btn_SaveConfig");
+            label21.Text = Strings.Get("Label_Milliseconds");
+            label24.Text = Strings.Get("Label_OutputRecoilOff");
+            label23.Text = Strings.Get("Label_Milliseconds");
+            label20.Text = Strings.Get("Label_OutputDamaged");
+            label10.Text = Strings.Get("Label_Milliseconds");
+            label22.Text = Strings.Get("Label_OutputRecoilOn");
+            label25.Text = Strings.Get("Label_Milliseconds");
+            label26.Text = Strings.Get("Label_OutputDelay");
+            label39.Text = Strings.Get("Label_PageSelection");
+            Btn_Dcop.Text = Strings.Get("Btn_Dcop");
+            Btn_Drk.Text = Strings.Get("Btn_Drakon");
+            Btn_MarsS.Text = Strings.Get("Btn_MarsSortie");
+            Btn_Mib.Text = Strings.Get("Btn_MIB");
+            Btn_Mia.Text = Strings.Get("Btn_MissionImpossible");
+            Btn_Nerfa.Text = Strings.Get("Btn_NerfArcade");
+            Btn_Nha.Text = Strings.Get("Btn_NightHunter");
+            Btn_Owr.Text = Strings.Get("Btn_OpWolfReturn");
+            Btn_PvZ.Text = Strings.Get("Btn_PvZ");
+            Btn_Rha.Text = Strings.Get("Btn_RabbidsHollywood");
+            Btn_Tra.Text = Strings.Get("Btn_TombRaider");
+            Btn_Pbx.Text = Strings.Get("Btn_PointBlankX");
+            Btn_Wws.Text = Strings.Get("Btn_WildWestShootout");
+
+            foreach (var p in _GUI_Players)
+                p.ApplyLocalization();
+            foreach (var c in _GUI_AnalogCalibrations)
+                c.ApplyLocalization();
+        }
 
         #region RAW_INPUT
 
@@ -309,9 +479,9 @@ namespace DemulShooter_GUI
         private void Btn_SaveAnalog_Click(object sender, EventArgs e)
         {            
             if (Configurator.GetInstance().WriteConf(AppDomain.CurrentDomain.BaseDirectory + @"\" + CONF_FILENAME))
-                MessageBox.Show("Configuration saved !");
+                MessageBox.Show(Strings.Get("Msg_ConfigSaved"));
             else
-                MessageBox.Show("Impossible to save DemulShooter config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion
@@ -360,7 +530,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_ActLabs_X1.Text + " is not a valid X offset value. Please enter a non-decimal number");
+                MessageBox.Show(Txt_ActLabs_X1.Text + Strings.Get("Msg_InvalidXOffset"));
                 Txt_ActLabs_X1.Text = Configurator.GetInstance().GetPlayerSettings(1).Act_Labs_Offset_X.ToString();
             }
         }
@@ -372,7 +542,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_ActLabs_Y1.Text + " is not a valid Y offset value. Please enter a non-decimal number");
+                MessageBox.Show(Txt_ActLabs_Y1.Text + Strings.Get("Msg_InvalidYOffset"));
                 Txt_ActLabs_Y1.Text = Configurator.GetInstance().GetPlayerSettings(1).Act_Labs_Offset_Y.ToString();
             }
         }
@@ -384,7 +554,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_ActLabs_X2.Text + " is not a valid X offset value. Please enter a non-decimal number");
+                MessageBox.Show(Txt_ActLabs_X2.Text + Strings.Get("Msg_InvalidXOffset"));
                 Txt_ActLabs_X2.Text = Configurator.GetInstance().PlayersSettings[1].Act_Labs_Offset_X.ToString();
             }
         }
@@ -396,7 +566,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_ActLabs_Y2.Text + " is not a valid Y offset value. Please enter a non-decimal number");
+                MessageBox.Show(Txt_ActLabs_Y2.Text + Strings.Get("Msg_InvalidYOffset"));
                 Txt_ActLabs_Y2.Text = Configurator.GetInstance().PlayersSettings[1].Act_Labs_Offset_Y.ToString();
             }
         }
@@ -408,7 +578,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_ActLabs_X3.Text + " is not a valid X offset value. Please enter a non-decimal number");
+                MessageBox.Show(Txt_ActLabs_X3.Text + Strings.Get("Msg_InvalidXOffset"));
                 Txt_ActLabs_X3.Text = Configurator.GetInstance().PlayersSettings[2].Act_Labs_Offset_X.ToString();
             }
         }
@@ -420,7 +590,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_ActLabs_Y3.Text + " is not a valid Y offset value. Please enter a non-decimal number");
+                MessageBox.Show(Txt_ActLabs_Y3.Text + Strings.Get("Msg_InvalidYOffset"));
                 Txt_ActLabs_Y3.Text = Configurator.GetInstance().PlayersSettings[2].Act_Labs_Offset_Y.ToString();
             }
         }
@@ -432,7 +602,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_ActLabs_X4.Text + " is not a valid X offset value. Please enter a non-decimal number");
+                MessageBox.Show(Txt_ActLabs_X4.Text + Strings.Get("Msg_InvalidXOffset"));
                 Txt_ActLabs_X4.Text = Configurator.GetInstance().PlayersSettings[3].Act_Labs_Offset_X.ToString();
             }
         }
@@ -444,16 +614,16 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_ActLabs_Y4.Text + " is not a valid Y offset value. Please enter a non-decimal number");
+                MessageBox.Show(Txt_ActLabs_Y4.Text + Strings.Get("Msg_InvalidYOffset"));
                 Txt_ActLabs_Y4.Text = Configurator.GetInstance().PlayersSettings[3].Act_Labs_Offset_Y.ToString();
             }
         }         
         private void Btn_ActLabs_Save_Click(object sender, EventArgs e)
         {
             if (Configurator.GetInstance().WriteConf(AppDomain.CurrentDomain.BaseDirectory + @"\" + CONF_FILENAME))
-                MessageBox.Show("Configuration saved !");
+                MessageBox.Show(Strings.Get("Msg_ConfigSaved"));
             else
-                MessageBox.Show("Impossible to save DemulShooter config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void DrawCrosshair(PlayerSettings Player)
@@ -579,9 +749,9 @@ namespace DemulShooter_GUI
         private void Save_Sha_Keys_Click(object sender, EventArgs e)
         {
             if (Configurator.GetInstance().Write_Sha_Config())
-                MessageBox.Show("Key mapping saved !");
+                MessageBox.Show(Strings.Get("Msg_KeyMappingSaved"));
             else
-                MessageBox.Show("Impossible to save SHA config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ShaConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         
         #endregion
@@ -607,9 +777,9 @@ namespace DemulShooter_GUI
         private void Btn_Save_Gsoz_Click(object sender, EventArgs e)
         {
             if (Configurator.GetInstance().WriteConf(AppDomain.CurrentDomain.BaseDirectory + @"\" + CONF_FILENAME))
-                MessageBox.Show("Configuration saved !");
+                MessageBox.Show(Strings.Get("Msg_ConfigSaved"));
             else
-                MessageBox.Show("Impossible to save DemulShooter config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion
@@ -672,24 +842,24 @@ namespace DemulShooter_GUI
                 String message = "File \"" + Path + "\\WiimoteNew.ini\" successfully written !";
                 if (Overwritten)
                     message += "\n\nThe existing WiimoteNew.ini was backed-up to \"WiimoteNew.bak.ini\"\n\n";
-                MessageBox.Show(message, "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(message, Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 if (IsAimtrak)
                 {
                     message = "Aimtrak detected for Player2 device, Aimtrak ID = " + P2_Atrak_ID;
                     message += "\n\nAccording to DemulShooter config, P2 Wiimote axis device modified to : \n\"DInput/0/ATRAK Device #" + P2_Atrak_ID + "\"";
-                    MessageBox.Show(message, "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Information);                
+                    MessageBox.Show(message, Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Information);                
                 }
                 else
                 {
                     message = "No Aimtrak detected for Player2.";
                     message += "\n\nP2 Wiimote axis device will keep default value :\n \"DInput/0/ATRAK Device #2\"";
-                    MessageBox.Show(message, "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
+                    MessageBox.Show(message, Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Warning);                
                 }                
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Can't install WiimoteNew.ini : \n\n" + ex.Message.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_CantInstallWiimoteIni") + "\n\n" + ex.Message.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -716,7 +886,7 @@ namespace DemulShooter_GUI
                         }
                         else
                         {
-                            MessageBox.Show(_EAI_ExeFilename + " not found in following folder : " + fbd.SelectedPath, this.Text,  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(_EAI_ExeFilename + Strings.Get("Msg_ExeNotFound") + fbd.SelectedPath, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -766,7 +936,7 @@ namespace DemulShooter_GUI
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error patching " + ExeFilePath + " : \n" + Ex.Message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ErrorPatchingExe") + ExeFilePath + " : \n" + Ex.Message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             //USB dll patching
@@ -798,18 +968,18 @@ namespace DemulShooter_GUI
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error patching " + UsbDllFilePath + " : \n" + Ex.Message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ErrorPatchingExe") + UsbDllFilePath + " : \n" + Ex.Message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            MessageBox.Show("Patch Complete !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Strings.Get("Msg_PatchComplete"), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Btn_EAI_Save_Click(object sender, EventArgs e)
         {
             if (Configurator.GetInstance().WriteConf(AppDomain.CurrentDomain.BaseDirectory + @"\" + CONF_FILENAME))
-                MessageBox.Show("Configuration saved !");
+                MessageBox.Show(Strings.Get("Msg_ConfigSaved"));
             else
-                MessageBox.Show("Impossible to save DemulShooter config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion
@@ -849,11 +1019,11 @@ namespace DemulShooter_GUI
                     FlashState = "noflash";
                 foreach (FileInfo file in new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + "\\m2emulator\\scripts\\" + FlashState).GetFiles())
                     file.CopyTo(folderBrowserDialog1.SelectedPath + "\\scripts\\" + file.Name, true);
-                MessageBox.Show("Scripts installed !");
+                MessageBox.Show(Strings.Get("Msg_ScriptsInstalled"));
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Can't install m2emulator lua scripts : \n\n" + ex.Message.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(Strings.Get("Msg_CantInstallM2Scripts") + "\n\n" + ex.Message.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -886,9 +1056,9 @@ namespace DemulShooter_GUI
         private void Btn_HF_Save_Click(object sender, EventArgs e)
         {
             if (Configurator.GetInstance().WriteConf(AppDomain.CurrentDomain.BaseDirectory + @"\" + CONF_FILENAME))
-                MessageBox.Show("Configuration saved !");
+                MessageBox.Show(Strings.Get("Msg_ConfigSaved"));
             else
-                MessageBox.Show("Impossible to save DemulShooter config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion      
@@ -916,9 +1086,9 @@ namespace DemulShooter_GUI
         private void Btn_Save_Le3_Click(object sender, EventArgs e)
         {
             if (Configurator.GetInstance().WriteConf(AppDomain.CurrentDomain.BaseDirectory + @"\" + CONF_FILENAME))
-                MessageBox.Show("Configuration saved !");
+                MessageBox.Show(Strings.Get("Msg_ConfigSaved"));
             else
-                MessageBox.Show("Impossible to save DemulShooter config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #region Mission Impossible Tab
@@ -936,9 +1106,9 @@ namespace DemulShooter_GUI
         private void Btn_MisImp_Save_Click(object sender, EventArgs e)
         {
             if (Configurator.GetInstance().WriteConf(AppDomain.CurrentDomain.BaseDirectory + @"\" + CONF_FILENAME))
-                MessageBox.Show("Configuration saved !");
+                MessageBox.Show(Strings.Get("Msg_ConfigSaved"));
             else
-                MessageBox.Show("Impossible to save DemulShooter config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         
 
@@ -989,9 +1159,9 @@ namespace DemulShooter_GUI
         private void Btn_Save_OpGhost_Click(object sender, EventArgs e)
         {
             if (Configurator.GetInstance().WriteConf(AppDomain.CurrentDomain.BaseDirectory + @"\" + CONF_FILENAME))
-                MessageBox.Show("Configuration saved !");
+                MessageBox.Show(Strings.Get("Msg_ConfigSaved"));
             else
-                MessageBox.Show("Impossible to save DemulShooter config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion
@@ -1030,9 +1200,9 @@ namespace DemulShooter_GUI
         private void Install_Unity_Plugin(string SrcFolder, string DstFolder)
         {
             if (!CloneDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Unity\\" + SrcFolder, DstFolder))
-                MessageBox.Show("Impossible to copy Unity plugin in the following folder :\n" + DstFolder, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_UnityPluginCopyFailed") + "\n" + DstFolder, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                MessageBox.Show("Unity Plugin successfully installed !");
+                MessageBox.Show(Strings.Get("Msg_UnityPluginInstalled"));
         }
 
         #endregion
@@ -1058,7 +1228,7 @@ namespace DemulShooter_GUI
                         }
                         else
                         {
-                            MessageBox.Show(_RACCOON_ExeFilename + " not found in following folder : " + fbd.SelectedPath, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(_RACCOON_ExeFilename + Strings.Get("Msg_ExeNotFound") + fbd.SelectedPath, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -1097,10 +1267,10 @@ namespace DemulShooter_GUI
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error patching " + UsbDllFilePath + " : \n" + Ex.Message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ErrorPatchingExe") + UsbDllFilePath + " : \n" + Ex.Message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            MessageBox.Show("Patch Complete !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Strings.Get("Msg_PatchComplete"), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         #endregion
@@ -1119,7 +1289,7 @@ namespace DemulShooter_GUI
                     string CacheFolder = fbd.SelectedPath + @"\cache\SCEEXE000\ppu-obiMX8TqMzUsChXLV1Ln5TAJegSZ-EBOOT.BIN\";
                     if (!Directory.Exists(CacheFolder))
                     {
-                        MessageBox.Show("Directory not found :\n " + CacheFolder + "\n\nPlease run the game once before patching the PPU-Cache", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Strings.Get("Msg_DirNotFound") + "\n " + CacheFolder, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -1143,7 +1313,7 @@ namespace DemulShooter_GUI
                     string CacheFolder = fbd.SelectedPath + @"\cache\SCEEXE000\ppu-gfm17oJj1cUecjZQ8dVv46oQv2iW-EBOOT.BIN\";
                     if (!Directory.Exists(CacheFolder))
                     {
-                        MessageBox.Show("Directory not found :\n " + CacheFolder + "\n\nPlease run the game once before patching the PPU-Cache", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Strings.Get("Msg_DirNotFound") + "\n " + CacheFolder, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -1167,7 +1337,7 @@ namespace DemulShooter_GUI
                     string CacheFolder = fbd.SelectedPath + @"\cache\SCEEXE000\ppu-se1PtZVS5iF9A6M5Y1vu0wNqiASu-EBOOT.BIN\";
                     if (!Directory.Exists(CacheFolder))
                     {
-                        MessageBox.Show("Directory not found :\n " + CacheFolder + "\n\nPlease run the game once before patching the PPU-Cache", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Strings.Get("Msg_DirNotFound") + "\n " + CacheFolder, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -1187,9 +1357,9 @@ namespace DemulShooter_GUI
         private void Txt_Rpcs3_Save_Click(object sender, EventArgs e)
         {
             if (Configurator.GetInstance().WriteConf(AppDomain.CurrentDomain.BaseDirectory + @"\" + CONF_FILENAME))
-                MessageBox.Show("Configuration saved !");
+                MessageBox.Show(Strings.Get("Msg_ConfigSaved"));
             else
-                MessageBox.Show("Impossible to save DemulShooter config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         
         private void Patch_RPCS3_PPU_CacheFile(string CacheFolder, string CacheFileName, FileInfo SourceFile)
@@ -1204,16 +1374,16 @@ namespace DemulShooter_GUI
                     try
                     {
                         SourceFile.CopyTo(sCacheFile, true);
-                        MessageBox.Show("Successfully replaced PPU-Cache file : " + sCacheFile, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Strings.Get("Msg_PPUCacheReplaced") + sCacheFile, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error writing PPU-Cache file :" + sCacheFile + "\n\n" + ex.Message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Strings.Get("Msg_PPUCacheWriteError") + sCacheFile + "\n\n" + ex.Message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }                    
                     return;
                 }
             }
-            MessageBox.Show("PPU-Cache file not found :\n " + CacheFileName + "\n\nPlease run the game once before patching the PPU-Cache", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Strings.Get("Msg_PPUCacheNotFound") + "\n " + CacheFileName, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
@@ -1262,7 +1432,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_OutputDelay.Text + " is not a valid delay. Please enter a non-decimal number");
+                MessageBox.Show(Txt_OutputDelay.Text + Strings.Get("Msg_InvalidDelay"));
                 Txt_OutputDelay.Text = Configurator.GetInstance().OutputPollingDelay.ToString();
             }
         }
@@ -1275,7 +1445,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_OutputRecoilOn.Text + " is not a valid delay. Please enter a non-decimal number");
+                MessageBox.Show(Txt_OutputRecoilOn.Text + Strings.Get("Msg_InvalidDelay"));
                 Txt_OutputRecoilOn.Text = Configurator.GetInstance().OutputCustomRecoilOnDelay.ToString();
             }
         }
@@ -1288,7 +1458,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_OutputRecoilOff.Text + " is not a valid delay. Please enter a non-decimal number");
+                MessageBox.Show(Txt_OutputRecoilOff.Text + Strings.Get("Msg_InvalidDelay"));
                 Txt_OutputRecoilOff.Text = Configurator.GetInstance().OutputCustomRecoilOffDelay.ToString();
             }
         }
@@ -1301,7 +1471,7 @@ namespace DemulShooter_GUI
             }
             catch
             {
-                MessageBox.Show(Txt_OutputDamaged.Text + " is not a valid delay. Please enter a non-decimal number");
+                MessageBox.Show(Txt_OutputDamaged.Text + Strings.Get("Msg_InvalidDelay"));
                 Txt_OutputDamaged.Text = Configurator.GetInstance().OutputCustomDamagedDelay.ToString();
             }
         }
@@ -1309,9 +1479,9 @@ namespace DemulShooter_GUI
         private void Btn_Save_Cfg_Click(object sender, EventArgs e)
         {
             if (Configurator.GetInstance().WriteConf(AppDomain.CurrentDomain.BaseDirectory + @"\" + CONF_FILENAME))
-                MessageBox.Show("Configuration saved !");
+                MessageBox.Show(Strings.Get("Msg_ConfigSaved"));
             else
-                MessageBox.Show("Impossible to save DemulShooter config file.", "DemulShooter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_ConfigSaveFailed"), Strings.Get("Title_DemulShooter"), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion
@@ -1329,7 +1499,7 @@ namespace DemulShooter_GUI
                 _KeyboardHookID = Win32API.SetWindowsHookEx(Win32Define.WH_KEYBOARD_LL, _KeyboardHookProc, Win32API.GetModuleHandle(curModule.ModuleName), 0);
             if (_KeyboardHookID == IntPtr.Zero)
             {
-                MessageBox.Show("Failed to register LowLevel Keyboard Hook.", "DemulShooter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Strings.Get("Msg_KeyboardHookFailed"), Strings.Get("Title_Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

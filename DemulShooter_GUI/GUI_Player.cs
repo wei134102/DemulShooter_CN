@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using DsCore.Config;
 using DsCore.RawInput;
 using DsCore;
+using DemulShooter_GUI.Properties;
 
 namespace DemulShooter_GUI
 {
@@ -29,7 +30,7 @@ namespace DemulShooter_GUI
             Pnl_Options.Controls.Add(_RihData);
 
             Logger.WriteLog("Initializing Player" + _PlayerData.ID.ToString() + " devices:");
-            Lbl_Player.Text = "P" + _PlayerData.ID.ToString() + " Device :";
+            ApplyLocalization();
 
             //GUI init
             AddDevice("");
@@ -60,6 +61,16 @@ namespace DemulShooter_GUI
             }
             else
                 Logger.WriteLog("Current selected device : [None]");            
+        }
+
+        /// <summary>
+        /// Apply localized strings (Plan B).
+        /// </summary>
+        public void ApplyLocalization()
+        {
+            Lbl_Player.Text = string.Format(Strings.Get("Player_DeviceLabel"), _PlayerData.ID);
+            _RimData?.ApplyLocalization();
+            _RihData?.ApplyLocalization();
         }
 
         /// <summary>

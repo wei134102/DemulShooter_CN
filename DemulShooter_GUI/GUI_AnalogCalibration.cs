@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using DsCore.Config;
+using DemulShooter_GUI.Properties;
 
 namespace DemulShooter_GUI
 {
@@ -26,7 +27,7 @@ namespace DemulShooter_GUI
             _PlayerSettings = Ps;
             _Player = Player;
 
-            Cbox_Player.Text = "Override P" + Player.ToString() + " Axis";
+            ApplyLocalization();
             Cbox_Player.Checked = _PlayerSettings.AnalogAxisRangeOverride;
             if (_PlayerSettings.AnalogAxisRangeOverride)
             {
@@ -39,6 +40,22 @@ namespace DemulShooter_GUI
                 Txt_Calib_Xmax.Text = _PlayerSettings.AnalogManual_Xmax.ToString();
                 Txt_Calib_Ymax.Text = _PlayerSettings.AnalogManual_Ymax.ToString();
             }
+        }
+
+        /// <summary>
+        /// Apply localized strings (Plan B).
+        /// </summary>
+        public void ApplyLocalization()
+        {
+            Cbox_Player.Text = string.Format(Strings.Get("AnalogCalib_OverrideP"), _Player);
+            Gbox_P1_Calib.Text = Strings.Get("Gbox_ActLabsPlaceholder");
+            Btn_Init_Calib.Text = Strings.Get("AnalogCalib_Default");
+            Btn_Stop_Calib.Text = Strings.Get("AnalogCalib_Stop");
+            Btn_Start_Calib.Text = Strings.Get("AnalogCalib_Start");
+            label28.Text = Strings.Get("AnalogCalib_YMax");
+            label29.Text = Strings.Get("AnalogCalib_YMin");
+            label32.Text = Strings.Get("AnalogCalib_XMax");
+            label36.Text = Strings.Get("AnalogCalib_XMin");
         }
 
         private void Cbox_Player_CheckedChanged(object sender, EventArgs e)
@@ -112,7 +129,7 @@ namespace DemulShooter_GUI
                 _IsCalibrationRunning = true;
             }
             else
-                MessageBox.Show("This kind of device can't be calibrated : " + _PlayerSettings.RIController.DeviceType.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Strings.Get("Msg_DeviceCantBeCalibrated") + _PlayerSettings.RIController.DeviceType.ToString(), Strings.Get("Title_Warning"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void Btn_Stop_Calib_Click(object sender, EventArgs e)
@@ -139,7 +156,7 @@ namespace DemulShooter_GUI
                 Txt_Calib_Ymax.Text = _PlayerSettings.RIController.Axis_Y_Max.ToString();
             }
             else
-                MessageBox.Show("This kind of device can't be calibrated : " + _PlayerSettings.RIController.DeviceType.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Strings.Get("Msg_DeviceCantBeCalibrated") + _PlayerSettings.RIController.DeviceType.ToString(), Strings.Get("Title_Warning"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         public void UpdateValues()

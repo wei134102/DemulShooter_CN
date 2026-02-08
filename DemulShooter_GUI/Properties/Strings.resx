@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Main_Title" xml:space="preserve"><value>DemulShooter</value></data>
+  <data name="Btn_SaveConfig" xml:space="preserve"><value>Save Config</value></data>
+  <data name="Tab_P1Config" xml:space="preserve"><value>P1 Config</value></data>
+  <data name="Tab_P2Config" xml:space="preserve"><value>P2 Config</value></data>
+  <data name="Tab_P3Config" xml:space="preserve"><value>P3 Config</value></data>
+  <data name="Tab_P4Config" xml:space="preserve"><value>P4 Config</value></data>
+  <data name="Tab_AnalogCalib" xml:space="preserve"><value>Analog device calibration</value></data>
+  <data name="Tab_Calibration" xml:space="preserve"><value>Calibration</value></data>
+  <data name="Tab_Dolphin" xml:space="preserve"><value>Dolphin</value></data>
+  <data name="Tab_EAInvasion" xml:space="preserve"><value>Elevator Action Invasion</value></data>
+  <data name="Tab_GSOZ" xml:space="preserve"><value>Gundam : SoZ</value></data>
+  <data name="Tab_HeavyFire" xml:space="preserve"><value>Heavy Fire Afghanistan</value></data>
+  <data name="Tab_LethalEnforcer3" xml:space="preserve"><value>Lethal Enforcers 3</value></data>
+  <data name="Tab_M2" xml:space="preserve"><value>m2emulator</value></data>
+  <data name="Tab_MissionImpossible" xml:space="preserve"><value>Mission Impossible</value></data>
+  <data name="Tab_OpGhost" xml:space="preserve"><value>Operation G.H.O.S.T</value></data>
+  <data name="Tab_UnityPlugins" xml:space="preserve"><value>Unity Plugins</value></data>
+  <data name="Tab_Raccoon" xml:space="preserve"><value>Raccoon Rampage</value></data>
+  <data name="Tab_RPCS3" xml:space="preserve"><value>RPCS3 (System 357)</value></data>
+  <data name="Tab_SHA" xml:space="preserve"><value>Silent Hill the Arcade</value></data>
+  <data name="Tab_Outputs" xml:space="preserve"><value>Outputs</value></data>
+  <data name="Gbox_ActLabsPlaceholder" xml:space="preserve"><value>                                          </value></data>
+  <data name="Label_P1XOffset" xml:space="preserve"><value>P1 X offset :</value></data>
+  <data name="Label_P1YOffset" xml:space="preserve"><value>P1 Y offset :</value></data>
+  <data name="Label_P2XOffset" xml:space="preserve"><value>P2 X offset :</value></data>
+  <data name="Label_P2YOffset" xml:space="preserve"><value>P2 Y offset :</value></data>
+  <data name="Label_P3XOffset" xml:space="preserve"><value>P3 X offset :</value></data>
+  <data name="Label_P3YOffset" xml:space="preserve"><value>P3 Y offset :</value></data>
+  <data name="Label_P4XOffset" xml:space="preserve"><value>P4 X offset :</value></data>
+  <data name="Label_P4YOffset" xml:space="preserve"><value>P4 Y offset :</value></data>
+  <data name="Chk_ActLabsOffset" xml:space="preserve"><value>Enable X / Y offset   (offsets are in pixels)</value></data>
+  <data name="Chk_DspCorrectedCrosshair" xml:space="preserve"><value>Show a mark on shoot for "corrected" location</value></data>
+  <data name="Label_ActLabsHelp" xml:space="preserve"><value>Some Act Labs Gun users have issues with their gun raw-input data
+not being well calibrated. You can use this tab to reajust the aim.
+
+For X offset, negative values move the aim to the left.
+For Y offset, negative values move the aim to the top.</value></data>
+  <data name="Label_DolphinHelp" xml:space="preserve"><value>Click the button to copy the file "WiimoteNew.ini" to
+"MyDocuments\Dolphin Emulator\Config\WiimoteNew.ini"
+
+Existing file will be backed-up and overwritten !</value></data>
+  <data name="Btn_InstallWiimote" xml:space="preserve"><value>Install Wiimote configuration</value></data>
+  <data name="Gbox_SetKeyHelp" xml:space="preserve"><value>To set a key, click a box then push the key on your keyboard :</value></data>
+  <data name="Label_Settings" xml:space="preserve"><value>SETTINGS :</value></data>
+  <data name="Btn_SaveKeyConfig" xml:space="preserve"><value>Save Key config</value></data>
+  <data name="Label_Enter" xml:space="preserve"><value>ENTER :</value></data>
+  <data name="Label_Down" xml:space="preserve"><value>DOWN :</value></data>
+  <data name="Label_Up" xml:space="preserve"><value>UP:</value></data>
+  <data name="Label_P1Start" xml:space="preserve"><value>P1 Start :</value></data>
+  <data name="Label_P1Credits" xml:space="preserve"><value>P1 Credits :</value></data>
+  <data name="Label_P2Start" xml:space="preserve"><value>P2 Start :</value></data>
+  <data name="Label_P2Credits" xml:space="preserve"><value>P2 Credits :</value></data>
+  <data name="Gbox_EAI_SelectDir" xml:space="preserve"><value>Select "ESGame-Win64-Shipping.exe" directory to patch the files :</value></data>
+  <data name="Btn_Patch" xml:space="preserve"><value>Patch !</value></data>
+  <data name="Btn_Browse" xml:space="preserve"><value>...</value></data>
+  <data name="Label_GSOZ_PedalHelp" xml:space="preserve"><value>Default :
+Hide in game by pointing the gun out of screen.
+
+Pedal-Mode :
+Use a supplementary button to hide, like Time Crisis. Pointing the gun out of screen won't hide anymore.</value></data>
+  <data name="Gbox_Player1" xml:space="preserve"><value>Player 1 :</value></data>
+  <data name="Gbox_Player2" xml:space="preserve"><value>Player 2 :</value></data>
+  <data name="Label_SetPedalKey" xml:space="preserve"><value>Set the pedal key :</value></data>
+  <data name="Chk_EnablePedalMode" xml:space="preserve"><value>Enable "Pedal-Mode"</value></data>
+  <data name="Rdo_HF_MiddleGrenade" xml:space="preserve"><value>Use Middle Click for Player 1 Grenade</value></data>
+  <data name="Rdo_HF_MiddleCover" xml:space="preserve"><value>Use Middle Click for Player 1 Cover</value></data>
+  <data name="Label_HF_CoverQTE" xml:space="preserve"><value>Cover and QTE will need original [A] / [S] / [D] / [W] / [SPACE] keyboard keys</value></data>
+  <data name="Label_HF_GrenadeKey" xml:space="preserve"><value>Player 1 Grenade will need [G] Keyboard key</value></data>
+  <data name="Label_HF_CoverSensibility" xml:space="preserve"><value>"Cover Mode" Sensibility :</value></data>
+  <data name="Chk_HF_ReverseCover" xml:space="preserve"><value>Reverse cover side</value></data>
+  <data name="Btn_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Label_LE3_PedalHelp" xml:space="preserve"><value>Default :
+Hide in game by pointing the gun out of screen.
+
+Pedal-Mode :
+Use a supplementary button to hide, like Time Crisis. Pointing the gun out of screen won't hide anymore.</value></data>
+  <data name="Gbox_TriggersConfig" xml:space="preserve"><value>Triggers configuration :</value></data>
+  <data name="Rdo_MergeTriggers" xml:space="preserve"><value>Merge Triggers</value></data>
+  <data name="Rdo_SeparateTriggers" xml:space="preserve"><value>Separate Triggers</value></data>
+  <data name="Label_MergeTriggersHelp" xml:space="preserve"><value>Merge Triggers :
+Both player weapons will be activated by the "Trigger" button from the selected player controller.
+Mostly for simple lightgun owner with one trigger.
+
+Separate Triggers :
+Left gun trigger will be activated by the "Trigger" button.
+Right gun trigger will be activated by "Action" button.
+Use this if you have mounted arcade guns with 2 separate triggers.</value></data>
+  <data name="Gbox_CoinSettings" xml:space="preserve"><value>Coin Settings</value></data>
+  <data name="Label_CreditsToContinue" xml:space="preserve"><value>CREDITS TO CONTINUE :</value></data>
+  <data name="Label_CreditsToStart" xml:space="preserve"><value>CREDITS TO START :</value></data>
+  <data name="Label_CoinsPerCredit" xml:space="preserve"><value>COIN(S) PER CREDIT :</value></data>
+  <data name="Label_Freeplay" xml:space="preserve"><value>FREEPLAY :</value></data>
+  <data name="Label_SetP1Key" xml:space="preserve"><value>Set P1 key :</value></data>
+  <data name="Label_SetP2Key" xml:space="preserve"><value>Set P2 key :</value></data>
+  <data name="Chk_OpGhost_SeparateAction" xml:space="preserve"><value>Separate ACTION button</value></data>
+  <data name="Label_OpGhost_SeparateActionHelp" xml:space="preserve"><value>Separate ACTION button :
+
+ - Disabled : Action and Reload will be activated by the same mouse event (Right Button)
+ 
+ - Enabled : Action will not be triggered by any mouse buttons, but need a keyboard key</value></data>
+  <data name="Label_SelectUnityPlugin" xml:space="preserve"><value>Select the Unity Plugin to install :</value></data>
+  <data name="Gbox_Raccoon_SelectDir" xml:space="preserve"><value>Select "RSGame-Win64-Shipping.exe" directory to patch the files :</value></data>
+  <data name="Gbox_RPCS3_KeyConfig" xml:space="preserve"><value>Key configuration : to set a key, click a box then push the key on your keyboard</value></data>
+  <data name="Gbox_PPUCache" xml:space="preserve"><value>PPU Cache Patching :</value></data>
+  <data name="Btn_RazingStorm" xml:space="preserve"><value>Razing Storm</value></data>
+  <data name="Btn_SailorZombie" xml:space="preserve"><value>Sailor Zombie</value></data>
+  <data name="Btn_DarkEscape" xml:space="preserve"><value>Dark Escape 4D</value></data>
+  <data name="Btn_DeadStorm" xml:space="preserve"><value>DeadStorm Pirates</value></data>
+  <data name="Label_PlayerButtons" xml:space="preserve"><value>PLAYER BUTTONS :</value></data>
+  <data name="Label_TestMenuButtons" xml:space="preserve"><value>TEST MENU BUTTONS :</value></data>
+  <data name="Label_Service" xml:space="preserve"><value>SERVICE :</value></data>
+  <data name="Label_3DSwitch" xml:space="preserve"><value>3D Switch :</value></data>
+  <data name="Label_P1Start_Short" xml:space="preserve"><value>P1 Start :</value></data>
+  <data name="Label_Test" xml:space="preserve"><value>TEST :</value></data>
+  <data name="Label_P1Trigger" xml:space="preserve"><value>P1 Trigger :</value></data>
+  <data name="Label_Exit" xml:space="preserve"><value>EXIT :</value></data>
+  <data name="Label_P2Trigger" xml:space="preserve"><value>P2 Trigger :</value></data>
+  <data name="Cbox_NetOutputs" xml:space="preserve"><value>Network Outputs</value></data>
+  <data name="Cbox_WmOutputs" xml:space="preserve"><value>Window Messages outputs (MameHooker, etc...)</value></data>
+  <data name="Cbox_EnableOutputs" xml:space="preserve"><value>Enable Outputs</value></data>
+  <data name="Label_Milliseconds" xml:space="preserve"><value>Milliseconds</value></data>
+  <data name="Label_OutputRecoilOff" xml:space="preserve"><value>Length of custom [recoil] generated output OFF state :</value></data>
+  <data name="Label_OutputDamaged" xml:space="preserve"><value>Length of custom [damaged] generated output :</value></data>
+  <data name="Label_OutputRecoilOn" xml:space="preserve"><value>Length of custom [recoil] generated output ON state :</value></data>
+  <data name="Label_OutputDelay" xml:space="preserve"><value>Delay between output refresh :</value></data>
+  <data name="Label_PageSelection" xml:space="preserve"><value>Page selection :</value></data>
+  <data name="Btn_Dcop" xml:space="preserve"><value>DCOP</value></data>
+  <data name="Btn_Drakon" xml:space="preserve"><value>Drakon
+Realm Keeper</value></data>
+  <data name="Btn_MarsSortie" xml:space="preserve"><value>Mars Sortie</value></data>
+  <data name="Btn_MIB" xml:space="preserve"><value>M.I.B</value></data>
+  <data name="Btn_MissionImpossible" xml:space="preserve"><value>Mission Impossible</value></data>
+  <data name="Btn_NerfArcade" xml:space="preserve"><value>Nerf Arcade</value></data>
+  <data name="Btn_NightHunter" xml:space="preserve"><value>Night Hunter</value></data>
+  <data name="Btn_OpWolfReturn" xml:space="preserve"><value>Operation Wolf
+Return</value></data>
+  <data name="Btn_PvZ" xml:space="preserve"><value>Plant VS Zombies</value></data>
+  <data name="Btn_RabbidsHollywood" xml:space="preserve"><value>Rabbids Hollywood</value></data>
+  <data name="Btn_TombRaider" xml:space="preserve"><value>Tomb Raider Arcade</value></data>
+  <data name="Btn_PointBlankX" xml:space="preserve"><value>Point Blank X</value></data>
+  <data name="Btn_WildWestShootout" xml:space="preserve"><value>Wild West Shootout</value></data>
+  <data name="Cbox_M2_DisableFlash" xml:space="preserve"><value>Disable white flash on shoot</value></data>
+  <data name="Label_CrosshairVisibility" xml:space="preserve"><value>Crosshair visibility :</value></data>
+  <data name="Label_P2ChangeCrosshair" xml:space="preserve"><value>P2 change crosshair :</value></data>
+  <data name="Label_P1ChangeCrosshair" xml:space="preserve"><value>P1 change crosshair :</value></data>
+  <data name="Btn_M2Scripts" xml:space="preserve"><value>Install m2emulator crosshair scripts</value></data>
+  <data name="Label_M2_ScriptsHelp" xml:space="preserve"><value>Click the button to install lua scripts for custom crosshair
+in nebula Model2 Emulator.</value></data>
+  <data name="Title_Error" xml:space="preserve"><value>DemulShooter Error</value></data>
+  <data name="Title_DemulShooter" xml:space="preserve"><value>DemulShooter</value></data>
+  <data name="Msg_RawInputFailed" xml:space="preserve"><value>Failed to register raw input device(s).</value></data>
+  <data name="Msg_ConfigSaved" xml:space="preserve"><value>Configuration saved !</value></data>
+  <data name="Msg_ConfigSaveFailed" xml:space="preserve"><value>Impossible to save DemulShooter config file.</value></data>
+  <data name="Msg_InvalidXOffset" xml:space="preserve"><value> is not a valid X offset value. Please enter a non-decimal number</value></data>
+  <data name="Msg_InvalidYOffset" xml:space="preserve"><value> is not a valid Y offset value. Please enter a non-decimal number</value></data>
+  <data name="Msg_CantInstallWiimoteIni" xml:space="preserve"><value>Can't install WiimoteNew.ini : </value></data>
+  <data name="Msg_ExeNotFound" xml:space="preserve"><value> not found in following folder : </value></data>
+  <data name="Msg_ErrorPatchingExe" xml:space="preserve"><value>Error patching </value></data>
+  <data name="Msg_PatchComplete" xml:space="preserve"><value>Patch Complete !</value></data>
+  <data name="Msg_ScriptsInstalled" xml:space="preserve"><value>Scripts installed !</value></data>
+  <data name="Msg_CantInstallM2Scripts" xml:space="preserve"><value>Can't install m2emulator lua scripts : </value></data>
+  <data name="Msg_UnityPluginCopyFailed" xml:space="preserve"><value>Impossible to copy Unity plugin in the following folder :</value></data>
+  <data name="Msg_UnityPluginInstalled" xml:space="preserve"><value>Unity Plugin successfully installed !</value></data>
+  <data name="Msg_InvalidDelay" xml:space="preserve"><value> is not a valid delay. Please enter a non-decimal number</value></data>
+  <data name="Msg_KeyboardHookFailed" xml:space="preserve"><value>Failed to register LowLevel Keyboard Hook.</value></data>
+  <data name="Msg_KeyMappingSaved" xml:space="preserve"><value>Key mapping saved !</value></data>
+  <data name="Msg_ShaConfigSaveFailed" xml:space="preserve"><value>Impossible to save SHA config file.</value></data>
+  <data name="Msg_DirNotFound" xml:space="preserve"><value>Directory not found :
+
+Please run the game once before patching the PPU-Cache</value></data>
+  <data name="Msg_PPUCacheReplaced" xml:space="preserve"><value>Successfully replaced PPU-Cache file : </value></data>
+  <data name="Msg_PPUCacheWriteError" xml:space="preserve"><value>Error writing PPU-Cache file :</value></data>
+  <data name="Msg_PPUCacheNotFound" xml:space="preserve"><value>PPU-Cache file not found :
+
+Please run the game once before patching the PPU-Cache</value></data>
+  <data name="GunOptions_DeviceOptions" xml:space="preserve"><value>Device Options</value></data>
+  <data name="GunOptions_LeftMouseKey" xml:space="preserve"><value>"Left Mouse" Key :</value></data>
+  <data name="GunOptions_RightMouseKey" xml:space="preserve"><value>"Right Mouse"  Key :</value></data>
+  <data name="GunOptions_EnableVirtualMouse" xml:space="preserve"><value>Enable "Virtual" mouse buttons</value></data>
+  <data name="GunOptions_MiddleMouseKey" xml:space="preserve"><value>"Middle Mouse" Key :</value></data>
+  <data name="GunOptions_DevicePreview" xml:space="preserve"><value>Device Preview</value></data>
+  <data name="HID_YAxis" xml:space="preserve"><value>Y Axis :</value></data>
+  <data name="HID_XAxis" xml:space="preserve"><value>X Axis :</value></data>
+  <data name="HID_OffScreenButton" xml:space="preserve"><value>Off Screen  Button:</value></data>
+  <data name="HID_ActionButton" xml:space="preserve"><value>Action Button:</value></data>
+  <data name="HID_TriggerButton" xml:space="preserve"><value>Trigger Button :</value></data>
+  <data name="HID_InvertAxis" xml:space="preserve"><value>Invert Axis</value></data>
+  <data name="Player_P1Device" xml:space="preserve"><value>P1 Device :</value></data>
+  <data name="Player_DeviceLabel" xml:space="preserve"><value>P{0} Device :</value></data>
+  <data name="AnalogCalib_OverrideP" xml:space="preserve"><value>Override P{0} Axis</value></data>
+  <data name="AnalogCalib_OverrideP1" xml:space="preserve"><value>Override P1 Axis</value></data>
+  <data name="AnalogCalib_Default" xml:space="preserve"><value>Default</value></data>
+  <data name="AnalogCalib_Stop" xml:space="preserve"><value>Stop</value></data>
+  <data name="AnalogCalib_Start" xml:space="preserve"><value>Start</value></data>
+  <data name="AnalogCalib_YMax" xml:space="preserve"><value>Y Max :</value></data>
+  <data name="AnalogCalib_YMin" xml:space="preserve"><value>Y Min :</value></data>
+  <data name="AnalogCalib_XMax" xml:space="preserve"><value>X Max :</value></data>
+  <data name="AnalogCalib_XMin" xml:space="preserve"><value>X Min :</value></data>
+  <data name="Msg_DeviceCantBeCalibrated" xml:space="preserve"><value>This kind of device can't be calibrated : </value></data>
+  <data name="Title_Warning" xml:space="preserve"><value>Warning</value></data>
+</root>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Main_Title" xml:space="preserve"><value>DemulShooter</value></data>
+  <data name="Btn_SaveConfig" xml:space="preserve"><value>保存配置</value></data>
+  <data name="Tab_P1Config" xml:space="preserve"><value>玩家1 配置</value></data>
+  <data name="Tab_P2Config" xml:space="preserve"><value>玩家2 配置</value></data>
+  <data name="Tab_P3Config" xml:space="preserve"><value>玩家3 配置</value></data>
+  <data name="Tab_P4Config" xml:space="preserve"><value>玩家4 配置</value></data>
+  <data name="Tab_AnalogCalib" xml:space="preserve"><value>模拟设备校准</value></data>
+  <data name="Tab_Calibration" xml:space="preserve"><value>校准</value></data>
+  <data name="Tab_Dolphin" xml:space="preserve"><value>Dolphin</value></data>
+  <data name="Tab_EAInvasion" xml:space="preserve"><value>电梯行动 入侵</value></data>
+  <data name="Tab_GSOZ" xml:space="preserve"><value>高达 : SoZ</value></data>
+  <data name="Tab_HeavyFire" xml:space="preserve"><value>重火力 阿富汗</value></data>
+  <data name="Tab_LethalEnforcer3" xml:space="preserve"><value>致命执法者 3</value></data>
+  <data name="Tab_M2" xml:space="preserve"><value>m2emulator</value></data>
+  <data name="Tab_MissionImpossible" xml:space="preserve"><value>碟中谍</value></data>
+  <data name="Tab_OpGhost" xml:space="preserve"><value>幽灵行动</value></data>
+  <data name="Tab_UnityPlugins" xml:space="preserve"><value>Unity 插件</value></data>
+  <data name="Tab_Raccoon" xml:space="preserve"><value>浣熊大冒险</value></data>
+  <data name="Tab_RPCS3" xml:space="preserve"><value>RPCS3 (System 357)</value></data>
+  <data name="Tab_SHA" xml:space="preserve"><value>寂静岭 街机版</value></data>
+  <data name="Tab_Outputs" xml:space="preserve"><value>输出</value></data>
+  <data name="Gbox_ActLabsPlaceholder" xml:space="preserve"><value>                                          </value></data>
+  <data name="Label_P1XOffset" xml:space="preserve"><value>P1 X 偏移 :</value></data>
+  <data name="Label_P1YOffset" xml:space="preserve"><value>P1 Y 偏移 :</value></data>
+  <data name="Label_P2XOffset" xml:space="preserve"><value>P2 X 偏移 :</value></data>
+  <data name="Label_P2YOffset" xml:space="preserve"><value>P2 Y 偏移 :</value></data>
+  <data name="Label_P3XOffset" xml:space="preserve"><value>P3 X 偏移 :</value></data>
+  <data name="Label_P3YOffset" xml:space="preserve"><value>P3 Y 偏移 :</value></data>
+  <data name="Label_P4XOffset" xml:space="preserve"><value>P4 X 偏移 :</value></data>
+  <data name="Label_P4YOffset" xml:space="preserve"><value>P4 Y 偏移 :</value></data>
+  <data name="Chk_ActLabsOffset" xml:space="preserve"><value>启用 X / Y 偏移（单位为像素）</value></data>
+  <data name="Chk_DspCorrectedCrosshair" xml:space="preserve"><value>在“校正后”位置显示射击标记</value></data>
+  <data name="Label_ActLabsHelp" xml:space="preserve"><value>部分 Act Labs 光枪用户的原始输入数据校准不佳。
+可使用本页重新调整瞄准。
+
+X 偏移：负值向左移动准星。
+Y 偏移：负值向上移动准星。</value></data>
+  <data name="Label_DolphinHelp" xml:space="preserve"><value>点击按钮将 "WiimoteNew.ini" 复制到
+"我的文档\Dolphin Emulator\Config\WiimoteNew.ini"
+
+已有文件将被备份并覆盖！</value></data>
+  <data name="Btn_InstallWiimote" xml:space="preserve"><value>安装 Wiimote 配置</value></data>
+  <data name="Gbox_SetKeyHelp" xml:space="preserve"><value>设置按键：点击方框后按下键盘上的键</value></data>
+  <data name="Label_Settings" xml:space="preserve"><value>设置 :</value></data>
+  <data name="Btn_SaveKeyConfig" xml:space="preserve"><value>保存按键配置</value></data>
+  <data name="Label_Enter" xml:space="preserve"><value>确认 :</value></data>
+  <data name="Label_Down" xml:space="preserve"><value>下 :</value></data>
+  <data name="Label_Up" xml:space="preserve"><value>上:</value></data>
+  <data name="Label_P1Start" xml:space="preserve"><value>P1 开始 :</value></data>
+  <data name="Label_P1Credits" xml:space="preserve"><value>P1 投币 :</value></data>
+  <data name="Label_P2Start" xml:space="preserve"><value>P2 开始 :</value></data>
+  <data name="Label_P2Credits" xml:space="preserve"><value>P2 投币 :</value></data>
+  <data name="Gbox_EAI_SelectDir" xml:space="preserve"><value>选择 "ESGame-Win64-Shipping.exe" 所在目录以打补丁 :</value></data>
+  <data name="Btn_Patch" xml:space="preserve"><value>打补丁</value></data>
+  <data name="Btn_Browse" xml:space="preserve"><value>...</value></data>
+  <data name="Label_GSOZ_PedalHelp" xml:space="preserve"><value>默认：枪口移出屏幕时隐藏准星。
+
+踏板模式：使用额外按键隐藏（如化解危机）。移出屏幕将不再隐藏。</value></data>
+  <data name="Gbox_Player1" xml:space="preserve"><value>玩家 1 :</value></data>
+  <data name="Gbox_Player2" xml:space="preserve"><value>玩家 2 :</value></data>
+  <data name="Label_SetPedalKey" xml:space="preserve"><value>设置踏板按键 :</value></data>
+  <data name="Chk_EnablePedalMode" xml:space="preserve"><value>启用「踏板模式」</value></data>
+  <data name="Rdo_HF_MiddleGrenade" xml:space="preserve"><value>中键用于玩家1 手雷</value></data>
+  <data name="Rdo_HF_MiddleCover" xml:space="preserve"><value>中键用于玩家1 掩护</value></data>
+  <data name="Label_HF_CoverQTE" xml:space="preserve"><value>掩护与 QTE 需使用原始 [A]/[S]/[D]/[W]/[空格] 键</value></data>
+  <data name="Label_HF_GrenadeKey" xml:space="preserve"><value>玩家1 手雷需使用 [G] 键</value></data>
+  <data name="Label_HF_CoverSensibility" xml:space="preserve"><value>「掩护模式」灵敏度 :</value></data>
+  <data name="Chk_HF_ReverseCover" xml:space="preserve"><value>反转掩护方向</value></data>
+  <data name="Btn_Save" xml:space="preserve"><value>保存</value></data>
+  <data name="Label_LE3_PedalHelp" xml:space="preserve"><value>默认：枪口移出屏幕时隐藏准星。
+
+踏板模式：使用额外按键隐藏（如化解危机）。移出屏幕将不再隐藏。</value></data>
+  <data name="Gbox_TriggersConfig" xml:space="preserve"><value>扳机配置 :</value></data>
+  <data name="Rdo_MergeTriggers" xml:space="preserve"><value>合并扳机</value></data>
+  <data name="Rdo_SeparateTriggers" xml:space="preserve"><value>分离扳机</value></data>
+  <data name="Label_MergeTriggersHelp" xml:space="preserve"><value>合并扳机：两名玩家均由所选控制器的「扳机」键激活。
+适合单扳机光枪。
+
+分离扳机：左枪由「扳机」、右枪由「动作」键激活。
+适合双扳机街机光枪。</value></data>
+  <data name="Gbox_CoinSettings" xml:space="preserve"><value>投币设置</value></data>
+  <data name="Label_CreditsToContinue" xml:space="preserve"><value>续关所需投币 :</value></data>
+  <data name="Label_CreditsToStart" xml:space="preserve"><value>开始所需投币 :</value></data>
+  <data name="Label_CoinsPerCredit" xml:space="preserve"><value>每币投币数 :</value></data>
+  <data name="Label_Freeplay" xml:space="preserve"><value>免费游戏 :</value></data>
+  <data name="Label_SetP1Key" xml:space="preserve"><value>设置 P1 键 :</value></data>
+  <data name="Label_SetP2Key" xml:space="preserve"><value>设置 P2 键 :</value></data>
+  <data name="Chk_OpGhost_SeparateAction" xml:space="preserve"><value>独立动作键</value></data>
+  <data name="Label_OpGhost_SeparateActionHelp" xml:space="preserve"><value>独立动作键：
+
+ - 关闭：动作与换弹由同一鼠标事件（右键）触发
+ - 开启：动作不由鼠标触发，需单独设置键盘键</value></data>
+  <data name="Label_SelectUnityPlugin" xml:space="preserve"><value>选择要安装的 Unity 插件 :</value></data>
+  <data name="Gbox_Raccoon_SelectDir" xml:space="preserve"><value>选择 "RSGame-Win64-Shipping.exe" 所在目录以打补丁 :</value></data>
+  <data name="Gbox_RPCS3_KeyConfig" xml:space="preserve"><value>按键配置：点击方框后按键盘键</value></data>
+  <data name="Gbox_PPUCache" xml:space="preserve"><value>PPU 缓存打补丁 :</value></data>
+  <data name="Btn_RazingStorm" xml:space="preserve"><value>风暴行动</value></data>
+  <data name="Btn_SailorZombie" xml:space="preserve"><value>水手僵尸</value></data>
+  <data name="Btn_DarkEscape" xml:space="preserve"><value>黑暗逃亡 4D</value></data>
+  <data name="Btn_DeadStorm" xml:space="preserve"><value>死亡风暴 海盗</value></data>
+  <data name="Label_PlayerButtons" xml:space="preserve"><value>玩家按键 :</value></data>
+  <data name="Label_TestMenuButtons" xml:space="preserve"><value>测试菜单按键 :</value></data>
+  <data name="Label_Service" xml:space="preserve"><value>服务 :</value></data>
+  <data name="Label_3DSwitch" xml:space="preserve"><value>3D 切换 :</value></data>
+  <data name="Label_P1Start_Short" xml:space="preserve"><value>P1 开始 :</value></data>
+  <data name="Label_Test" xml:space="preserve"><value>测试 :</value></data>
+  <data name="Label_P1Trigger" xml:space="preserve"><value>P1 扳机 :</value></data>
+  <data name="Label_Exit" xml:space="preserve"><value>退出 :</value></data>
+  <data name="Label_P2Trigger" xml:space="preserve"><value>P2 扳机 :</value></data>
+  <data name="Cbox_NetOutputs" xml:space="preserve"><value>网络输出</value></data>
+  <data name="Cbox_WmOutputs" xml:space="preserve"><value>窗口消息输出 (MameHooker 等)</value></data>
+  <data name="Cbox_EnableOutputs" xml:space="preserve"><value>启用输出</value></data>
+  <data name="Label_Milliseconds" xml:space="preserve"><value>毫秒</value></data>
+  <data name="Label_OutputRecoilOff" xml:space="preserve"><value>自定义 [后坐力] 输出关闭时长 :</value></data>
+  <data name="Label_OutputDamaged" xml:space="preserve"><value>自定义 [受伤] 输出时长 :</value></data>
+  <data name="Label_OutputRecoilOn" xml:space="preserve"><value>自定义 [后坐力] 输出开启时长 :</value></data>
+  <data name="Label_OutputDelay" xml:space="preserve"><value>输出刷新间隔 :</value></data>
+  <data name="Label_PageSelection" xml:space="preserve"><value>页面选择 :</value></data>
+  <data name="Btn_Dcop" xml:space="preserve"><value>DCOP</value></data>
+  <data name="Btn_Drakon" xml:space="preserve"><value>龙王
+王国守护者</value></data>
+  <data name="Btn_MarsSortie" xml:space="preserve"><value>火星出击</value></data>
+  <data name="Btn_MIB" xml:space="preserve"><value>黑衣人</value></data>
+  <data name="Btn_MissionImpossible" xml:space="preserve"><value>碟中谍</value></data>
+  <data name="Btn_NerfArcade" xml:space="preserve"><value>热火 街机</value></data>
+  <data name="Btn_NightHunter" xml:space="preserve"><value>夜猎者</value></data>
+  <data name="Btn_OpWolfReturn" xml:space="preserve"><value>野狼行动
+回归</value></data>
+  <data name="Btn_PvZ" xml:space="preserve"><value>植物大战僵尸</value></data>
+  <data name="Btn_RabbidsHollywood" xml:space="preserve"><value>疯狂兔子 好莱坞</value></data>
+  <data name="Btn_TombRaider" xml:space="preserve"><value>古墓丽影 街机</value></data>
+  <data name="Btn_PointBlankX" xml:space="preserve"><value>枪神 X</value></data>
+  <data name="Btn_WildWestShootout" xml:space="preserve"><value>西部枪战</value></data>
+  <data name="Cbox_M2_DisableFlash" xml:space="preserve"><value>射击时禁用白闪</value></data>
+  <data name="Label_CrosshairVisibility" xml:space="preserve"><value>准星可见键 :</value></data>
+  <data name="Label_P2ChangeCrosshair" xml:space="preserve"><value>P2 切换准星 :</value></data>
+  <data name="Label_P1ChangeCrosshair" xml:space="preserve"><value>P1 切换准星 :</value></data>
+  <data name="Btn_M2Scripts" xml:space="preserve"><value>安装 m2emulator 准星脚本</value></data>
+  <data name="Label_M2_ScriptsHelp" xml:space="preserve"><value>点击按钮安装 nebula Model2 模拟器自定义准星用 lua 脚本。</value></data>
+  <data name="Title_Error" xml:space="preserve"><value>DemulShooter 错误</value></data>
+  <data name="Title_DemulShooter" xml:space="preserve"><value>DemulShooter</value></data>
+  <data name="Msg_RawInputFailed" xml:space="preserve"><value>无法注册原始输入设备。</value></data>
+  <data name="Msg_ConfigSaved" xml:space="preserve"><value>配置已保存！</value></data>
+  <data name="Msg_ConfigSaveFailed" xml:space="preserve"><value>无法保存 DemulShooter 配置文件。</value></data>
+  <data name="Msg_InvalidXOffset" xml:space="preserve"><value> 不是有效的 X 偏移，请输入整数</value></data>
+  <data name="Msg_InvalidYOffset" xml:space="preserve"><value> 不是有效的 Y 偏移，请输入整数</value></data>
+  <data name="Msg_CantInstallWiimoteIni" xml:space="preserve"><value>无法安装 WiimoteNew.ini : </value></data>
+  <data name="Msg_ExeNotFound" xml:space="preserve"><value> 在以下目录中未找到 : </value></data>
+  <data name="Msg_ErrorPatchingExe" xml:space="preserve"><value>打补丁出错 </value></data>
+  <data name="Msg_PatchComplete" xml:space="preserve"><value>补丁完成！</value></data>
+  <data name="Msg_ScriptsInstalled" xml:space="preserve"><value>脚本已安装！</value></data>
+  <data name="Msg_CantInstallM2Scripts" xml:space="preserve"><value>无法安装 m2emulator lua 脚本 : </value></data>
+  <data name="Msg_UnityPluginCopyFailed" xml:space="preserve"><value>无法将 Unity 插件复制到以下目录 :</value></data>
+  <data name="Msg_UnityPluginInstalled" xml:space="preserve"><value>Unity 插件安装成功！</value></data>
+  <data name="Msg_InvalidDelay" xml:space="preserve"><value> 不是有效的延迟，请输入整数</value></data>
+  <data name="Msg_KeyboardHookFailed" xml:space="preserve"><value>无法注册低级键盘钩子。</value></data>
+  <data name="Msg_KeyMappingSaved" xml:space="preserve"><value>按键映射已保存！</value></data>
+  <data name="Msg_ShaConfigSaveFailed" xml:space="preserve"><value>无法保存 SHA 配置文件。</value></data>
+  <data name="Msg_DirNotFound" xml:space="preserve"><value>目录未找到：
+
+请先运行一次游戏再进行 PPU 缓存打补丁</value></data>
+  <data name="Msg_PPUCacheReplaced" xml:space="preserve"><value>已成功替换 PPU 缓存文件 : </value></data>
+  <data name="Msg_PPUCacheWriteError" xml:space="preserve"><value>写入 PPU 缓存文件出错 :</value></data>
+  <data name="Msg_PPUCacheNotFound" xml:space="preserve"><value>未找到 PPU 缓存文件：
+
+请先运行一次游戏再进行打补丁</value></data>
+  <data name="GunOptions_DeviceOptions" xml:space="preserve"><value>设备选项</value></data>
+  <data name="GunOptions_LeftMouseKey" xml:space="preserve"><value>「左键」按键 :</value></data>
+  <data name="GunOptions_RightMouseKey" xml:space="preserve"><value>「右键」按键 :</value></data>
+  <data name="GunOptions_EnableVirtualMouse" xml:space="preserve"><value>启用「虚拟」鼠标键</value></data>
+  <data name="GunOptions_MiddleMouseKey" xml:space="preserve"><value>「中键」按键 :</value></data>
+  <data name="GunOptions_DevicePreview" xml:space="preserve"><value>设备预览</value></data>
+  <data name="HID_YAxis" xml:space="preserve"><value>Y 轴 :</value></data>
+  <data name="HID_XAxis" xml:space="preserve"><value>X 轴 :</value></data>
+  <data name="HID_OffScreenButton" xml:space="preserve"><value>脱屏 按键:</value></data>
+  <data name="HID_ActionButton" xml:space="preserve"><value>动作键:</value></data>
+  <data name="HID_TriggerButton" xml:space="preserve"><value>扳机键 :</value></data>
+  <data name="HID_InvertAxis" xml:space="preserve"><value>反转轴</value></data>
+  <data name="Player_P1Device" xml:space="preserve"><value>P1 设备 :</value></data>
+  <data name="Player_DeviceLabel" xml:space="preserve"><value>P{0} 设备 :</value></data>
+  <data name="AnalogCalib_OverrideP" xml:space="preserve"><value>覆盖 P{0} 轴</value></data>
+  <data name="AnalogCalib_OverrideP1" xml:space="preserve"><value>覆盖 P1 轴</value></data>
+  <data name="AnalogCalib_Default" xml:space="preserve"><value>默认</value></data>
+  <data name="AnalogCalib_Stop" xml:space="preserve"><value>停止</value></data>
+  <data name="AnalogCalib_Start" xml:space="preserve"><value>开始</value></data>
+  <data name="AnalogCalib_YMax" xml:space="preserve"><value>Y 最大 :</value></data>
+  <data name="AnalogCalib_YMin" xml:space="preserve"><value>Y 最小 :</value></data>
+  <data name="AnalogCalib_XMax" xml:space="preserve"><value>X 最大 :</value></data>
+  <data name="AnalogCalib_XMin" xml:space="preserve"><value>X 最小 :</value></data>
+  <data name="Msg_DeviceCantBeCalibrated" xml:space="preserve"><value>此类设备无法校准 : </value></data>
+  <data name="Title_Warning" xml:space="preserve"><value>警告</value></data>
+</root>
