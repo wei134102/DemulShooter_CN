@@ -793,6 +793,8 @@ namespace DemulShooter_GUI
         private void InstallWiimoteconfigFile(String ResourceFile)
         {
             String Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Dolphin Emulator\Config";
+            if (!System.IO.Directory.Exists(Path))
+                Path = AppDomain.CurrentDomain.BaseDirectory.TrimEnd(System.IO.Path.DirectorySeparatorChar);
             bool IsAimtrak = false;
             bool Overwritten = false;
             try
