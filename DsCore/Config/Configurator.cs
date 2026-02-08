@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
@@ -20,6 +20,14 @@ namespace DsCore.Config
 
         //Maximum number of player allowed for DemulShooter to handle
         public const int MAX_PLAYERS = 4;
+
+        //GUI language (zh-CN, en, etc.)
+        private string _GUI_Language = "zh-CN";
+        public string GUI_Language
+        {
+            get { return _GUI_Language; }
+            set { _GUI_Language = value; }
+        }
 
         //P1-P4 settings
         private PlayerSettings[] _PlayersSettings;
@@ -529,6 +537,10 @@ namespace DsCore.Config
                                     if (!GetPlayerSettings(4).ParseIniParameter(StrKey.ToLower().Substring(2), StrValue))
                                         Logger.WriteLog("Error parsing " + StrKey + " value in INI file : " + StrValue + " is not valid");
                                 }
+                                else if (StrKey.ToLower().Equals("gui_language"))
+                                {
+                                    _GUI_Language = StrValue.Trim();
+                                }
                                 else if (StrKey.ToLower().Equals("act_labs_offset_enable"))
                                 {
                                     if (!bool.TryParse(StrValue, out _Act_Labs_Offset_Enable))
@@ -938,6 +950,17 @@ namespace DsCore.Config
             {
                 using (StreamWriter sr = new StreamWriter(ConfigFilePath, false))
                 {
+                    sr.WriteLine(";中文配置启用");
+                    sr.WriteLine("gui_language=" + _GUI_Language);
+                    sr.WriteLine("");
+                    sr.WriteLine(";无线蓝牙设备校准启用");
+                    sr.WriteLine("P1Analog_Calibration_Override = False");
+                    sr.WriteLine("P1Analog_Manual_Xmin = 0");
+                    sr.WriteLine("P1Analog_Manual_Xmax = 254");
+                    sr.WriteLine("P1Analog_Manual_Ymin = 0");
+                    sr.WriteLine("P1Analog_Manual_Ymax = 254");
+                    sr.WriteLine("");
+
                     foreach (PlayerSettings PlayerData in _PlayersSettings)
                     {
                         sr.WriteLine(";Player" + PlayerData.ID + " Device configuration");

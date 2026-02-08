@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
@@ -1068,8 +1068,14 @@ namespace DemulShooter
                                     if (Player.RIController.DeviceType == RawInputDeviceType.RIM_TYPEHID && Player.AnalogAxisRangeOverride)
                                     {
                                         Logger.WriteLog("Overriding player axis range values : X => [ " + Player.AnalogManual_Xmin.ToString() + ", " + Player.AnalogManual_Xmax.ToString() + " ], Y => [ " + Player.AnalogManual_Ymin.ToString() + ", " + Player.AnalogManual_Ymax.ToString() + " ]");
-                                        Player.RIController.Computed_X = _Game.ScreenScale(Player.RIController.Computed_X, Player.AnalogManual_Xmin, Player.AnalogManual_Xmax, 0, _Game.ScreenWidth);
-                                        Player.RIController.Computed_Y = _Game.ScreenScale(Player.RIController.Computed_Y, Player.AnalogManual_Ymin, Player.AnalogManual_Ymax, 0, _Game.ScreenHeight);
+                                        // Remap device range (e.g. -127..127) to user-defined range (e.g. 0..254) for GUN4IR Bluetooth etc.
+                                        int devXMin = Player.RIController.Axis_X_Min, devXMax = Player.RIController.Axis_X_Max;
+                                        int devYMin = Player.RIController.Axis_Y_Min, devYMax = Player.RIController.Axis_Y_Max;
+                                        int rawX = Player.RIController.Computed_X, rawY = Player.RIController.Computed_Y;
+                                        int remappedX = (devXMax != devXMin) ? (int)((rawX - devXMin) * ((double)(Player.AnalogManual_Xmax - Player.AnalogManual_Xmin) / (devXMax - devXMin)) + Player.AnalogManual_Xmin) : Player.AnalogManual_Xmin;
+                                        int remappedY = (devYMax != devYMin) ? (int)((rawY - devYMin) * ((double)(Player.AnalogManual_Ymax - Player.AnalogManual_Ymin) / (devYMax - devYMin)) + Player.AnalogManual_Ymin) : Player.AnalogManual_Ymin;
+                                        Player.RIController.Computed_X = _Game.ScreenScale(remappedX, Player.AnalogManual_Xmin, Player.AnalogManual_Xmax, 0, _Game.ScreenWidth);
+                                        Player.RIController.Computed_Y = _Game.ScreenScale(remappedY, Player.AnalogManual_Ymin, Player.AnalogManual_Ymax, 0, _Game.ScreenHeight);
                                     }
                                     else
                                     {
